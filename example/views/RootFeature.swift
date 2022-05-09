@@ -14,6 +14,6 @@ final class RootFeature: BaseviewController {
     }
 
     override func toNexButton() {
-        // invocar siguiente vista.
+        navigationController?.pushViewController(FeatureOne(color: .red, title: "Caracteristica 1"), animated: true)
     }
 }

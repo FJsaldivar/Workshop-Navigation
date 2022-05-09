@@ -20,7 +20,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootView: UIViewController = RootFeature(color: .white, title: "vista raíz")
         let navigationController: UINavigationController = .init(rootViewController: rootView)
         
-        self.window?.rootViewController = navigationController
+        // El item indica como se presentara el botón que se agregara en el tab bar
+        let item = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        navigationController.tabBarItem = item
+        
+        
+        
+        
+        let feature4 = Feature4(color: .brown, title: "Caracteristica 4")
+        let itemFeature4 = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        feature4.tabBarItem = itemFeature4
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([navigationController, feature4], animated: true)
+        
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
     
